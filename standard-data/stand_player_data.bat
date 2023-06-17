@@ -1,3 +1,4 @@
+set wait=1
 set HP=10
 set maxHP=10
 set defense=0

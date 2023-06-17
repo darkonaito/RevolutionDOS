@@ -1,19 +1,13 @@
 @echo off
-::Copyrights : DarkNight_09 \ DarkoNaito-Kun.
 setlocal EnableExtensions EnableDelayedExpansion
-::________________________________________________________S T A R T________________________________
-
-::______D I C H I A R A Z I O N I____V A R I A B I L I____1
-
 set numChan=1
 set visNumHelp=0
 set numHelp=1
 set num=1
+set step_n=0
+set go_n=0
 set firFat=102
 set secFat=30
-
-::______D I C H I A R A Z I O N I____V A R I A B I L I____2
-
 set C_F_M_F_O=1
 set C_M_F_O=1
 set C_S_O=1
@@ -29,10 +23,7 @@ set C_F_CH_O=1
 set C_CH_O=1
 set C_L_CH_O=1
 mode %firFat%, %secFat%
-@title VIDEOGAME ; (%nickname%, %password%) ; (%numChan%, ) ; (%numHelp%, %visNumHelp%) ; (%num%, ) ; Darko Naito-Kun :3  
-
-::______C H E C K I N G____C O D E S____
-
+@title VIDEOGAME ; (%nickname%, %password%) ; (%numChan%, ) ; (%numHelp%, %visNumHelp%) ; (%num%, ) ; (wait=%wait%, etichetta=%E%,passo=%step_n%,passare a=%go_n%)  
 :check_player_data
 if "%nickname%"=="" set nickname=;
 if not exist "accounts\%nickname%" (
@@ -46,13 +37,10 @@ exit
 )
 call accounts\%nickname%\stand_player_data.bat
 goto MAIN_FACE_1
-
-::________________________________________________________I N T E R F A C C I E________________________________
-
 :MAIN_FACE_1
-@title VIDEOGAME ; (%nickname%, %password%) ; (%numChan%, ) ; (%numHelp%, %visNumHelp%) ; (%num%, ) ; Darko Naito-Kun :3 
+set "E=MAIN_FACE" & call "minor\"reg_func.bat
+@title VIDEOGAME ; (%nickname%, %password%) ; (%numChan%, ) ; (%numHelp%, %visNumHelp%) ; (%num%, ) ; (wait=%wait%, etichetta=%E%,passo=%step_n%,passare a=%go_n%) 
 cls
-::set numChan=1
 echo.
 echo        ษออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออป
 ping localhost -n 1 > nul
@@ -132,13 +120,12 @@ color 0f
 echo        ศออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออผ
 color 0a
 if %C_F_M_F_O% == 1 call :mainCho
-
 :MAIN_FACE
+set "E=MAIN_FACE" & call "minor\"reg_func.bat
 call :declBasVar
-@title VIDEOGAME ; (%nickname%, %password%) ; (%numChan%, ) ; (%numHelp%, %visNumHelp%) ; (%num%, ) ; Darko Naito-Kun :3 
+@title VIDEOGAME ; (%nickname%, %password%) ; (%numChan%, ) ; (%numHelp%, %visNumHelp%) ; (%num%, ) ; (wait=%wait%, etichetta=%E%,passo=%step_n%,passare a=%go_n%) 
 mode %firFat%, %secFat%
 cls
-::set numChan=1
 echo.
 echo        ษออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออป                           
 echo        บ                                                              บ
@@ -168,7 +155,8 @@ echo        บ                                                              บ
 echo        ศออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออผ
 if %C_M_F_O% == 1 call :mainCho2
 :SEL_SETT
-@title VIDEOGAME ; (%nickname%, %password%) ; (%numChan%, ) ; (%numHelp%, %visNumHelp%) ; (%num%, ) ; Darko Naito-Kun :3 
+set "E=SEL_SETT" & call "minor\"reg_func.bat
+@title VIDEOGAME ; (%nickname%, %password%) ; (%numChan%, ) ; (%numHelp%, %visNumHelp%) ; (%num%, ) ; (wait=%wait%, etichetta=%E%,passo=%step_n%,passare a=%go_n%) 
 mode %firFat%, %secFat%
 cls
 echo.
@@ -199,11 +187,10 @@ echo        บ                                                              บ    
 echo        บ                                                              บ             DarkNight_09
 echo        บ                                                              บ
 echo        ศออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออผ
-
 if %C_S_O% == 1 call :selCho
-
 :SEL_COL
-@title VIDEOGAME ; (%nickname%, %password%) ; (%numChan%, ) ; (%numHelp%, %visNumHelp%) ; (%num%, ) ; Darko Naito-Kun :3 
+set "E=SEL_COL" & call "minor\"reg_func.bat
+@title VIDEOGAME ; (%nickname%, %password%) ; (%numChan%, ) ; (%numHelp%, %visNumHelp%) ; (%num%, ) ; (wait=%wait%, etichetta=%E%,passo=%step_n%,passare a=%go_n%) 
 mode %firFat%, %secFat%
 cls
 echo.
@@ -236,13 +223,13 @@ echo        บ                                                              บ
 echo        ศออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออผ
 if %C_C_C% == 1 call :colCol
 if %C_C_O% == 1 call :colCho
-
 @echo off
 mode 100,30
 :HELP_1
+set "E=HELP_1" & call "minor\"reg_func.bat
 set numHelp=1
 set visNumHelp=0
-@title VIDEOGAME ; (%nickname%, %password%) ; (%numChan%, ) ; (%numHelp%, %visNumHelp%) ; (%num%, ) ; Darko Naito-Kun :3 
+@title VIDEOGAME ; (%nickname%, %password%) ; (%numChan%, ) ; (%numHelp%, %visNumHelp%) ; (%num%, ) ; (wait=%wait%, etichetta=%E%,passo=%step_n%,passare a=%go_n%) 
 mode %firFat%, %secFat%
 cls
 echo.
@@ -274,10 +261,10 @@ echo        บ                                                              บ    
 echo        บ                                                              บ
 echo        ศออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออผ
 if %C_F_H_O% == 1 call :firHelpCho
-
 :HELP_2
+set "E=HELP_2" & call "minor\"reg_func.bat
 set/a visNumHelp= %numHelp%-1
-@title VIDEOGAME ; (%nickname%, %password%) ; (%numChan%, ) ; (%numHelp%, %visNumHelp%) ; (%num%, ) ; Darko Naito-Kun :3 
+@title VIDEOGAME ; (%nickname%, %password%) ; (%numChan%, ) ; (%numHelp%, %visNumHelp%) ; (%num%, ) ; (wait=%wait%, etichetta=%E%,passo=%step_n%,passare a=%go_n%) 
 mode %firFat%, %secFat%
 cls
 echo.
@@ -309,9 +296,9 @@ echo        บ                                                              บ    
 echo        บ                                                              บ
 echo        ศออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออผ
 if %C_L_H_O% == 1 call :lastHelpCho
-
 :SEL_RISO
-@title VIDEOGAME ; (%nickname%, %password%) ; (%numChan%, ) ; (%numHelp%, %visNumHelp%) ; (%num%, ) ; Darko Naito-Kun :3 
+set "E=SEL_RISO" & call "minor\"reg_func.bat
+@title VIDEOGAME ; (%nickname%, %password%) ; (%numChan%, ) ; (%numHelp%, %visNumHelp%) ; (%num%, ) ; (wait=%wait%, etichetta=%E%,passo=%step_n%,passare a=%go_n%) 
 @echo off
 mode %firFat%, %secFat%
 cls
@@ -345,10 +332,10 @@ echo        บ                                                              บ
 echo        ศออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออผ
 if %C_R_R% == 1 call :risRis
 if %C_R_O% == 1 call :risCho
-
 :INFO_1
+set "E=INFO_1" & call "minor\"reg_func.bat
 set numChan=1
-@title VIDEOGAME ; (%nickname%, %password%) ; (%numChan%, ) ; (%numHelp%, %visNumHelp%) ; (%num%, ) ; Darko Naito-Kun :3 
+@title VIDEOGAME ; (%nickname%, %password%) ; (%numChan%, ) ; (%numHelp%, %visNumHelp%) ; (%num%, ) ; (wait=%wait%, etichetta=%E%,passo=%step_n%,passare a=%go_n%) 
 cls
 echo.
 echo        ษออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออป                           
@@ -379,9 +366,9 @@ echo        บ                                                              บ    
 echo        บ                                                              บ
 echo        ศออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออผ
 if %C_F_CH_O% == 1 call :firChanCho
-
 :INFO_2
-@title VIDEOGAME ; (%nickname%, %password%) ; (%numChan%, ) ; (%numHelp%, %visNumHelp%) ; (%num%, ) ; Darko Naito-Kun :3 
+set "E=INFO_2" & call "minor\"reg_func.bat
+@title VIDEOGAME ; (%nickname%, %password%) ; (%numChan%, ) ; (%numHelp%, %visNumHelp%) ; (%num%, ) ; (wait=%wait%, etichetta=%E%,passo=%step_n%,passare a=%go_n%) 
 cls
 echo.
 echo        ษออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออป                           
@@ -412,9 +399,9 @@ echo        บ                                                              บ    
 echo        บ                                                              บ
 echo        ศออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออผ
 if %C_CH_O% == 1 call :chanCho
-
 :INFO_3
-@title VIDEOGAME ; (%nickname%, %password%) ; (%numChan%, ) ; (%numHelp%, %visNumHelp%) ; (%num%, ) ; Darko Naito-Kun :3 
+set "E=INFO_3" & call "minor\"reg_func.bat
+@title VIDEOGAME ; (%nickname%, %password%) ; (%numChan%, ) ; (%numHelp%, %visNumHelp%) ; (%num%, ) ; (wait=%wait%, etichetta=%E%,passo=%step_n%,passare a=%go_n%) 
 cls
 echo.
 echo        ษออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออป                           
@@ -445,9 +432,9 @@ echo        บ                                                              บ    
 echo        บ   - Altre modifiche secondarie e fix di bug secondari.       บ
 echo        ศออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออผ
 if %C_CH_O% == 1 call :chanCho
-
 :INFO_4
-@title VIDEOGAME ; (%nickname%, %password%) ; (%numChan%, ) ; (%numHelp%, %visNumHelp%) ; (%num%, ) ; Darko Naito-Kun :3 
+set "E=INFO_4" & call "minor\"reg_func.bat
+@title VIDEOGAME ; (%nickname%, %password%) ; (%numChan%, ) ; (%numHelp%, %visNumHelp%) ; (%num%, ) ; (wait=%wait%, etichetta=%E%,passo=%step_n%,passare a=%go_n%) 
 cls
 echo.
 echo        ษออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออป                           
@@ -478,9 +465,9 @@ echo        บ                                                              บ    
 echo        บ                                                              บ
 echo        ศออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออผ
 if %C_L_CH_O% == 1 call :lastChanCho
-
 :SEL_CMD
-@title VIDEOGAME ; (%nickname%, %password%) ; (%numChan%, ) ; (%numHelp%, %visNumHelp%) ; (%num%, ) ; Darko Naito-Kun :3 
+set "E=SEL_CMD" & call "minor\"reg_func.bat
+@title VIDEOGAME ; (%nickname%, %password%) ; (%numChan%, ) ; (%numHelp%, %visNumHelp%) ; (%num%, ) ; (wait=%wait%, etichetta=%E%,passo=%step_n%,passare a=%go_n%) 
 set "cmd="
 cls
 echo.
@@ -495,15 +482,9 @@ echo.
 echo   - Inserire "goto relCMD" per ricaricare la pagina -
 echo.
 echo   * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *
-echo.
-      
+echo.     
 if %C_CMD_O% == 1 call :cmdLoop
 goto cmdFixing
-
-::________________________________________________________S C R I P T S_______S C E L T E________________________________
-
-::______________B A S I L A R____S C R I P T S______[]____
-
 :declBasVar
 set C_F_M_F_O=1
 set C_M_F_O=1
@@ -520,44 +501,35 @@ set C_F_CH_O=1
 set C_CH_O=1
 set C_L_CH_O=1
 goto :EOF
-
-::______________S C E L T E____M A I N____F A C E______[OPZI]____
-
 :mainCho 
-@choice /c:123456 /n
+@choice /c:1234567 /n
 if "%errorlevel%"=="1" goto selPlay
 if "%errorlevel%"=="2" goto SEL_SETT
 if "%errorlevel%"=="3" goto HELP_1
 if "%errorlevel%"=="4" goto SEL_CMD
 if "%errorlevel%"=="5" goto INFO_1
 if "%errorlevel%"=="6" goto SEL_EXIT
+if "%errorlevel%"=="7" call :undo
 goto :EOF
-
-::______________S C E L T E____M A I N____F A C E____2______[OPZI]____
-
 :mainCho2
-@choice /c:123456 /n
+@choice /c:1234567 /n
 if "%errorlevel%"=="1" goto selPlay
 if "%errorlevel%"=="2" goto SEL_SETT
 if "%errorlevel%"=="3" goto HELP_1
 if "%errorlevel%"=="4" goto SEL_CMD
 if "%errorlevel%"=="5" goto INFO_1
 if "%errorlevel%"=="6" goto SEL_EXIT
+if "%errorlevel%"=="7" call :undo
 goto :EOF
-
-::______________S C E L T E____O P Z I O N I______[OPZI]____
-
 :selCho
-@choice /c:12345 /n 
+@choice /c:123456 /n 
 if "%errorlevel%"=="1" goto SEL_COL
 if "%errorlevel%"=="2" goto SEL_RISO
 if "%errorlevel%"=="3" goto SEL_BACK
 if "%errorlevel%"=="4" goto HELP_1
 if "%errorlevel%"=="5" goto SEL_EXIT
+if "%errorlevel%"=="6" call :undo
 goto :EOF
-
-::______________S C E L T E____ C O L O R I______[COLO]____
-
 :colCol
 set "C="
 set/p "C=   Color:  "
@@ -575,11 +547,8 @@ goto SEL_COL
 )
 )
 goto :EOF
-
-::______________S C E L T E____ C O L O R I______[OPZI]____
-
 :colCho
-@choice /c:12345 /n 
+@choice /c:123456 /n 
 if "%errorlevel%"=="1" (
 set C_C_C=1
 goto SEL_COL
@@ -592,10 +561,8 @@ goto :SEL_COL
 if "%errorlevel%"=="3" goto SEL_BACK
 if "%errorlevel%"=="4" goto HELP_1
 if "%errorlevel%"=="5" goto SEL_EXIT
+if "%errorlevel%"=="6" call :undo
 goto :EOF
-
-::______________S C E L T E____ R I S O L U Z I O N E______[RISO]____
-
 :risRis
 set/p "firFat=First Factor: "
 if '%firFat%' == '' goto SEL_RISO
@@ -609,11 +576,8 @@ goto SEL_RISO
 )
 )
 goto :EOF
-
-::______________S C E L T E____ R I S O L U Z I O N E______[OPZI]____
-
 :risCho
-@choice /c:12345 /n 
+@choice /c:123456 /n 
 if "%errorlevel%"=="1" (
 set C_R_R=1
 goto SEL_RISO
@@ -628,72 +592,55 @@ goto SEL_RISO
 if "%errorlevel%"=="3" goto SEL_BACK
 if "%errorlevel%"=="4" goto HELP_1
 if "%errorlevel%"=="5" goto SEL_EXIT
+if "%errorlevel%"=="6" call :undo
 goto :EOF
-
-::______________P R I M A____S C E L T A____M A N U A L E______[]____
-
 :firHelpCho
-@choice /c:1234 /n
+@choice /c:12345 /n
 if "%errorlevel%"=="1" call :plusNumHelp 
 if "%errorlevel%"=="2" goto SEL_BACK
 if "%errorlevel%"=="3" goto SEL_SETT
 if "%errorlevel%"=="4" goto SEL_EXIT
+if "%errorlevel%"=="5" call :undo
 goto :EOF
-
-::______________U L T I M A____S C E L T A____M A N U A L E______[]____
-
 :lastHelpCho
-@choice /c:1234 /n
+@choice /c:12345 /n
 if "%errorlevel%"=="1" call :lessNumHelp 
 if "%errorlevel%"=="2" goto SEL_BACK
 if "%errorlevel%"=="3" goto SEL_SETT
 if "%errorlevel%"=="4" goto SEL_EXIT
+if "%errorlevel%"=="5" call :undo
 goto :EOF
-
-
-::______________S C E L T E____M A N U A L E______[]____
-
 :helpCho
-@choice /c:1234 /n
+@choice /c:123456 /n
 if "%errorlevel%"=="1" call :plusNumHelp 
 if "%errorlevel%"=="2" call :lessNumHelp
 if "%errorlevel%"=="3" goto SEL_BACK
 if "%errorlevel%"=="4" goto SEL_SETT
 if "%errorlevel%"=="5" goto SEL_EXIT
+if "%errorlevel%"=="6" call :undo
 goto :EOF
-
-::______________S C R I P T S____M A N U A L E______[]____
-
 :plusNumHelp
 set/a numHelp= %numHelp%+1
 goto HELP_%numHelp%
-
 :lessNumHelp
 set/a numHelp= %numHelp%-1
 goto HELP_%numHelp%
-
-::______________P R I M A____S C E L T A____C H A N G E L O G____
-
 :firChanCho
-@choice /c:1234 /n 
+@choice /c:12345 /n 
 if "%errorlevel%"=="1" call :plusNumChan
 if "%errorlevel%"=="2" goto MAIN_FACE
 if "%errorlevel%"=="3" goto HELP_1
 if "%errorlevel%"=="4" goto SEL_EXIT
+if "%errorlevel%"=="5" call :undo
 goto :EOF
-
-::______________U L T I M A____S C E L T A____C H A N G E L O G____
-
 :lastChanCho
-@choice /c:1234 /n 
+@choice /c:12345 /n 
 if "%errorlevel%"=="1" call :lessNumChan
 if "%errorlevel%"=="2" goto MAIN_FACE
 if "%errorlevel%"=="3" goto HELP_1
 if "%errorlevel%"=="4" goto SEL_EXIT
+if "%errorlevel%"=="5" call :undo
 goto :EOF
-
-::______________S C E L T A____C H A N G E L O G____
-
 :chanCho
 @choice /c:123456 /n 
 if "%errorlevel%"=="1" (
@@ -705,40 +652,31 @@ call :lessNumChan
 if "%errorlevel%"=="3" goto MAIN_FACE
 if "%errorlevel%"=="4" goto HELP_1
 if "%errorlevel%"=="5" goto SEL_EXIT
+if "%errorlevel%"=="6" call :undo
 goto :EOF
-
-::______________S C R I P T S____C H A N G E L O G______[]____
-
 :plusNumChan
 set/a numChan= %numChan%+1
 goto :INFO_%numChan%
-
 :lessNumChan
 set/a numChan= %numChan%-1
 goto :INFO_%numChan%
-
-::______________S C R I P T S____C O N S O L E______[]____
-
 :cmdLoop
 set "cmd="
 set/p "cmd=        > > > "
 %cmd%
 set "cmd="
 goto cmdLoop
-
 :relCMD
 goto SEL_CMD
-
-::______________B A C K____C A S E____
-
 :SEL_BACK
 goto MAIN_FACE
-
-::______________E X I T____C A S E____
-
 :SEL_EXIT
+del /q "minor\undo\"*
 exit
-
-::______________P L A Y____C A S E____
 :selPlay
 call game_real.bat
+:undo
+set/a go_n=%step_n%-1
+FOR /f "delims=" %%i in (minor\undo\%go_n%.txt) DO (
+goto :%%i
+)
